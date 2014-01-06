@@ -22,21 +22,21 @@ ARCH=iphoneos-arm
 if [ ${DEB_VERSION-_} ]; then
   DEB_VERSION=1
 fi
-SVN_VERSION=`svnversion $SRCROOT | sed 's/^.*://'`
+SVN_VERSION=`git rev-list --all | wc -l | tr -d ' '`
 
 # The directory where the .deb file is being packaged
 DEB_BUILD_DIR=$DERIVED_FILE_DIR/$PACKAGE_NAME
 DEB_METADATA_DIR=$DEB_BUILD_DIR/DEBIAN
 DEB_APP_DIR=$DEB_BUILD_DIR/Applications
-#while [ true ]; do
+while [ true ]; do
   # This is the .deb package version, put in the control file and deb filename.
-  VERSION="1"
+  VERSION="$SVN_VERSION-$DEB_VERSION"
   DEB_DST=$TARGET_BUILD_DIR/${PACKAGE_NAME}_${VERSION}_${ARCH}.deb
-#  if [ ! -f $DEB_DST ]; then
-#    break
-#  fi
-#  DEB_VERSION=$((DEB_VERSION + 1))
-#done
+  if [ ! -f $DEB_DST ]; then
+    break
+  fi
+  DEB_VERSION=$((DEB_VERSION + 1))
+done
 
 if [ ${1-_} == "clean" ]; then
   rm -fr $TARGET_BUILD_DIR/${PACKAGE_NAME}*
