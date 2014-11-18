@@ -82,27 +82,27 @@
 }
 
 -(IBAction)esc:(id)sender {
-    [[terminalGroupView terminalAtIndex:[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c",0x1b] dataUsingEncoding:NSASCIIStringEncoding]];
+    [[terminalGroupView terminalAtIndex:(int)[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c",0x1b] dataUsingEncoding:NSASCIIStringEncoding]];
 }
 
 -(IBAction)tab:(id)sender {
-    [[terminalGroupView terminalAtIndex:[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c",0x9] dataUsingEncoding:NSASCIIStringEncoding]];
+    [[terminalGroupView terminalAtIndex:(int)[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c",0x9] dataUsingEncoding:NSASCIIStringEncoding]];
 }
 
 -(IBAction)up:(id)sender {
-    [[terminalGroupView terminalAtIndex:[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c%c%c",(char)0x1B,(char)0x5B,(char)0x41] dataUsingEncoding:NSASCIIStringEncoding]];
+    [[terminalGroupView terminalAtIndex:(int)[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c%c%c",(char)0x1B,(char)0x5B,(char)0x41] dataUsingEncoding:NSASCIIStringEncoding]];
 }
 
 -(IBAction)down:(id)sender {
-    [[terminalGroupView terminalAtIndex:[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c%c%c",(char)0x1B,(char)0x5B,(char)0x42] dataUsingEncoding:NSASCIIStringEncoding]];
+    [[terminalGroupView terminalAtIndex:(int)[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c%c%c",(char)0x1B,(char)0x5B,(char)0x42] dataUsingEncoding:NSASCIIStringEncoding]];
 }
 
 -(IBAction)left:(id)sender {
-    [[terminalGroupView terminalAtIndex:[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c%c%c",(char)0x1B,(char)0x5B,(char)0x44] dataUsingEncoding:NSASCIIStringEncoding]];
+    [[terminalGroupView terminalAtIndex:(int)[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c%c%c",(char)0x1B,(char)0x5B,(char)0x44] dataUsingEncoding:NSASCIIStringEncoding]];
 }
 
 -(IBAction)right:(id)sender {
-    [[terminalGroupView terminalAtIndex:[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c%c%c",(char)0x1B,(char)0x5B,(char)0x43] dataUsingEncoding:NSASCIIStringEncoding]];
+    [[terminalGroupView terminalAtIndex:(int)[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c%c%c",(char)0x1B,(char)0x5B,(char)0x43] dataUsingEncoding:NSASCIIStringEncoding]];
 }
 
 -(IBAction)showfn:(id)sender {
@@ -121,29 +121,29 @@
 
 -(IBAction)fn:(UIBarButtonItem *)sender {
     if ([sender.title isEqualToString:@"F1"]){
-        [[terminalGroupView terminalAtIndex:[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%cOP",0x1B] dataUsingEncoding:NSUTF8StringEncoding]];
+        [[terminalGroupView terminalAtIndex:(int)[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%cOP",0x1B] dataUsingEncoding:NSUTF8StringEncoding]];
     } else if ([sender.title isEqualToString:@"F2"]){
-        [[terminalGroupView terminalAtIndex:[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%cOQ",0x1B] dataUsingEncoding:NSUTF8StringEncoding]];
+        [[terminalGroupView terminalAtIndex:(int)[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%cOQ",0x1B] dataUsingEncoding:NSUTF8StringEncoding]];
     } else if ([sender.title isEqualToString:@"F3"]){
-        [[terminalGroupView terminalAtIndex:[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%cOR",0x1B] dataUsingEncoding:NSUTF8StringEncoding]];
+        [[terminalGroupView terminalAtIndex:(int)[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%cOR",0x1B] dataUsingEncoding:NSUTF8StringEncoding]];
     } else if ([sender.title isEqualToString:@"F4"]){
-        [[terminalGroupView terminalAtIndex:[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%cOS",0x1B] dataUsingEncoding:NSUTF8StringEncoding]];
+        [[terminalGroupView terminalAtIndex:(int)[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%cOS",0x1B] dataUsingEncoding:NSUTF8StringEncoding]];
     } else if ([sender.title isEqualToString:@"F5"]){
-        [[terminalGroupView terminalAtIndex:[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c[15~",0x1B] dataUsingEncoding:NSUTF8StringEncoding]];
+        [[terminalGroupView terminalAtIndex:(int)[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c[15~",0x1B] dataUsingEncoding:NSUTF8StringEncoding]];
     } else if ([sender.title isEqualToString:@"F6"]){
-        [[terminalGroupView terminalAtIndex:[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c[17~",0x1B] dataUsingEncoding:NSUTF8StringEncoding]];
+        [[terminalGroupView terminalAtIndex:(int)[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c[17~",0x1B] dataUsingEncoding:NSUTF8StringEncoding]];
     } else if ([sender.title isEqualToString:@"F7"]){
-        [[terminalGroupView terminalAtIndex:[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c[18~",0x1B] dataUsingEncoding:NSUTF8StringEncoding]];
+        [[terminalGroupView terminalAtIndex:(int)[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c[18~",0x1B] dataUsingEncoding:NSUTF8StringEncoding]];
     } else if ([sender.title isEqualToString:@"F8"]){
-        [[terminalGroupView terminalAtIndex:[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c[19~",0x1B] dataUsingEncoding:NSUTF8StringEncoding]];
+        [[terminalGroupView terminalAtIndex:(int)[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c[19~",0x1B] dataUsingEncoding:NSUTF8StringEncoding]];
     } else if ([sender.title isEqualToString:@"F9"]){
-        [[terminalGroupView terminalAtIndex:[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c[20~",0x1B] dataUsingEncoding:NSUTF8StringEncoding]];
+        [[terminalGroupView terminalAtIndex:(int)[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c[20~",0x1B] dataUsingEncoding:NSUTF8StringEncoding]];
     } else if ([sender.title isEqualToString:@"F10"]){
-        [[terminalGroupView terminalAtIndex:[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c[21~",0x1B] dataUsingEncoding:NSUTF8StringEncoding]];
+        [[terminalGroupView terminalAtIndex:(int)[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c[21~",0x1B] dataUsingEncoding:NSUTF8StringEncoding]];
     } else if ([sender.title isEqualToString:@"F11"]){
-        [[terminalGroupView terminalAtIndex:[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c[22~",0x1B] dataUsingEncoding:NSUTF8StringEncoding]];
+        [[terminalGroupView terminalAtIndex:(int)[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c[22~",0x1B] dataUsingEncoding:NSUTF8StringEncoding]];
     } else if ([sender.title isEqualToString:@"F12"]){
-        [[terminalGroupView terminalAtIndex:[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c[23~",0x1B] dataUsingEncoding:NSUTF8StringEncoding]];
+        [[terminalGroupView terminalAtIndex:(int)[terminalSelector currentPage]] receiveKeyboardInput:[[NSString stringWithFormat:@"%c[23~",0x1B] dataUsingEncoding:NSUTF8StringEncoding]];
     }
 }
 
@@ -197,7 +197,7 @@
 - (void)terminalSelectionDidChange:(id)sender 
 {
   TerminalView* terminalView =
-      [terminalGroupView terminalAtIndex:[terminalSelector currentPage]];
+      [terminalGroupView terminalAtIndex:(int)[terminalSelector currentPage]];
   terminalKeyboard.inputDelegate = terminalView;
   gestureActionRegistry.terminalInput = terminalView;
   [terminalGroupView bringTerminalToFront:terminalView];

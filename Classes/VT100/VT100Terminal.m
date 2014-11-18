@@ -1352,11 +1352,11 @@ static VT100TCC decode_string(unsigned char *datap, size_t datalen,
 
         if (*datap>=0x20 && *datap<=0x7f) {
             result = decode_ascii_string(datap, datalen, &rmlen);
-            result.length = rmlen;
+            result.length = (int)rmlen;
             result.position = datap;
         } else if (iscontrol(datap[0])) {
             result = decode_control(datap, datalen, &rmlen, ENCODING, SCREEN);
-            result.length = rmlen;
+            result.length = (int)rmlen;
             result.position = datap;
             [self setMode:result];
             [self setCharAttr:result];
@@ -1373,7 +1373,7 @@ static VT100TCC decode_string(unsigned char *datap, size_t datalen,
                 result.u.code = datap[0];
                 rmlen = 1;
             }
-            result.length = rmlen;
+            result.length = (int)rmlen;
             result.position = datap;
         }
 

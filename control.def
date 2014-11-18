@@ -1,4 +1,4 @@
-Package: mobileterminal-applesdk
+Package: keiju-mobileterminal-applesdk
 Priority: standard
 Name: MobileTerminal
 Version: VERSION
@@ -8,8 +8,8 @@ Pre-Depends: firmware (>= 3.2)
 Pre-Depends: dpkg (>= 1.14.25-8)
 Depends: bash, coreutils, ncurses, system-cmds
 Architecture: ARCH
-Author: MobileTerminal <mobileterminal@googlegroups.com>
-Maintainer: MobileTerminal <mobileterminal@googlegroups.com>
+Author: Keiju KITAZAWA
+Maintainer: Keiju KITAZAWA
 Description: A Terminal emulator
  This is a Terminal emulator for the iPhone. With it you can do all of 
  your standard system administration tasks from anywhere: ssh into 

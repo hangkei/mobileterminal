@@ -48,7 +48,7 @@
   if (cell == nil) {
     cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
   }
-  MenuItem* menuItem = [menuSettings menuItemAtIndex:[indexPath indexAtPosition:1]];
+  MenuItem* menuItem = [menuSettings menuItemAtIndex:(int)[indexPath indexAtPosition:1]];
   cell.textLabel.text = menuItem.label;
   cell.textLabel.font = font;
   return cell;
@@ -56,7 +56,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  MenuItem* menuItem = [menuSettings menuItemAtIndex:[indexPath indexAtPosition:1]];
+  MenuItem* menuItem = [menuSettings menuItemAtIndex:(int)[indexPath indexAtPosition:1]];
   [delegate selectedCommand:menuItem.command];
 }
 
